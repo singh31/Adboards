@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const authRoutes = require('./routes/auth-routes.js');
+const indexRoutes = require('./routes/index-routes.js');
 const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const app = express();
@@ -20,6 +21,12 @@ app.use(passport.session());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
+//for accessing var in ejs file
+app.use(function(req, res, next){
+    res.locals.currentUsr = req.user;
+    next();
+});
+
 mongoose.connect("mongodb+srv://Admin:amansohani@cluster0-6g0lv.mongodb.net/test?retryWrites=true&w=majority", ()=>{
 	console.log("Connected to DB Success");
 });
@@ -27,17 +34,9 @@ mongoose.connect("mongodb+srv://Admin:amansohani@cluster0-6g0lv.mongodb.net/test
 // set up routes
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+app.use('/', indexRoutes);
 
-//for accessing var in ejs file
-app.use(function(req, res, next){
-    res.locals.currentUsr = req.user;
-    next();
-});
 
-// create home route
-app.get('/', (req, res) => {
-    res.render('home.ejs', { user: req.user });
-});
 app.listen(3000, () => {
     console.log('app now listening for requests on port 3000');
 });

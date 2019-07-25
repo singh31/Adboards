@@ -3,8 +3,14 @@ const passport = require('passport');
 
 // auth login
 router.get('/login', (req, res) => {
-    res.render('login.ejs', { user: req.user });
+    res.render('login.ejs');
 });
+
+//register
+router.get('/register', (req, res) => {
+    res.render('register.ejs');
+});
+
 // auth logout
 router.get('/logout', (req, res) => {
     // handle with passport
