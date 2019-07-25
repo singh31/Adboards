@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Jomhuria&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Jomhuria&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fascinate|Rubik&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+  <a class="navbar-brand" href="mainpage.html">BRAND NAME</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto" style="font-family: 'Rubik', sans-serif;">
+      <li class="nav-item">
+        <a class="nav-link" href="properties.html">PROPERTIES</b></a>
+      </li>
+      
+       <li class="nav-item">
+		<% if (currentUsr) { %>
+        	<a class="nav-link" href="/auth/logout/">LOGOUT</b></a>
+		<% } else { %>
+            <a class="nav-link" href="/auth/login/">LOGIN</b></a>
+                <% } %>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link" href="register.html">REGISTER</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">PRIVACY POLICY</b><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="aboutus.html">ABOUT US</b></a>
+      </li>
+
+  </div>
+</nav>
+	
+  <div class="jumbotron jumbotron-fluid" style="height: 600px;" >
+	
+  
+
+
+ 
+  
+     
+      
+    
+  
+
+<form style="margin-left: 100px;">
+<fieldset>
+<legend style="font-family: Raleway; font-size:60px; margin-left: 280px;"><b>ONE STOP FOR <span style="color: #FF6969;">D</span>REAM HOME</b></legend>
+<legend style="font-family: Raleway; font-size:15px; margin-left: 520px; color: #ABA7A7;" >Property for Sale & for Rent around the World</legend>
+
+
+<div class="clearfix" style="margin-left: 400px;">
+<div class="signup-form" style="margin-left: 80px;">
+
+<input type="text" placeholder="Locations"  class="txtb" id="label1" name="label1" tabindex="10" autocomplete="off">
+</div>
+
+<div class="signup-form" >
+
+<input type="text" placeholder="Bedrooms" class="txtb" id="label2" name="label2" tabindex="20" autocomplete="off">
+</div>
+<br>
+</div>
+<div class="clearfix" style="margin-left: 400px;">
+
+<div class="signup-form" style="margin-left: 80px;">
+
+<input type="text" placeholder="Price" class="txtb" id="label3" name="label3" tabindex="30" autocomplete="off">
+</div>
+
+<div class="signup-form">
+
+<input type="text" placeholder="Flat or Mansion" class="txtb" id="label4" name="label4" tabindex="40" autocomplete="off">
+</div>
+</div>
+
+</fieldset>
+</form>
+ <div style="margin-left: 690px; margin-top:30px;float: left; ">
+
+<table border="0"; style="border-color: white;" style="margin-left: 40px;">  
+  <tr>
+    <td class="btn1" style="width: 166px; height: 20px; "> <a href="#" id="log" style="text-decoration: none;">
+        <p style="text-align: center;">FIND HERE</p>
+      </a>
+      
+    </td>
+  </tr>
+ </table>
+</div>
+
+
+  
+    
+     <div class="scroll_top"><span><i style="font-size:24px" class="fa">&#xf062;</i></span>
+     
+  </div>
+    
+       
+
+
+
+   
+  
+
+<div class="jumbotron1 jumbotron-fluid" style="background-color: #341B05; height: 100px; margin-top: 620px;">
+    
+    <div class="middle" style="margin-top: 730px;">
+      <a class="btn3" href="#" style="margin-right: 20px;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a class="btn3" href="#" style="margin-right: 20px;">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a class="btn3" href="#" style="margin-right: 20px;">
+        <i class="fab fa-google"></i>
+      </a>
+      <a class="btn3" href="#" style="margin-right: 20px;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a class="btn3" href="#" style="margin-right: 20px;">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    </div>
+
+
+
+	<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+	<script type="text/javascript" src="/js/mainpage.js"></script>
+	<script src="/js/bootstrap.bundle.js"></script>
+    <script src=""></script>
+</body>
+</html>
