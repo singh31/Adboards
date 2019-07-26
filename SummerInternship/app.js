@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const expressSession  = require("express-session");
 const passport = require('passport');
 const authRoutes = require('./routes/auth-routes.js');
 const indexRoutes = require('./routes/index-routes.js');
@@ -10,9 +11,15 @@ const passportSetup = require('./config/passport-setup');
 const app = express();
 
 // set up session cookies
-app.use(cookieSession({
-    maxAge: 24 * 60 * 60 * 1000,
-    keys: ['my name is aman sohani']
+// app.use(cookieSession({
+//     maxAge: 24 * 60 * 60 * 1000,
+//     keys: ['my name is aman sohani']
+// }));
+
+app.use(expressSession({
+    secret: "My name is Aman",
+    resave: false,
+    saveUninitialized: false
 }));
 // initialize passport
 app.use(passport.initialize());

@@ -20,6 +20,7 @@ passport.use(
         clientSecret: 'PN0xOKTSW3HN2xyoAHmY_YYm',
 		callbackURL: '/auth/google/redirect'
     }, function(accessToken, refreshToken, profile, done){
+			console.log(profile);
 			User.findOne({googleId: profile.id}).then((foundUser)=>{
 				if(foundUser){
 					console.log("User already exists"+foundUser);
@@ -28,7 +29,10 @@ passport.use(
 				else{
 					new User({
 						googleId: profile.id,
-						username: profile.displayName
+						username: profile.displayName,
+						email: profile._json.email,
+						firstName: profile._json.given_name,
+						lastName: profile._json.family_name
 					}).save().then(function(newUser){
 						console.log("new user created successfully");
 						done(null, newUser);
@@ -42,11 +46,10 @@ passport.use(
 
 passport.use(
     new FacebookStrategy({
-        // options for google strategy
         clientID: '2407095239535092',
         clientSecret: 'c9107159c3c21fe26b6e730218b9f7a4',
 		callbackURL: 'https://c9backup-wklcs.run.goorm.io/auth/facebook/redirect',
-		profileFields: ['id', 'displayName', 'photos', 'email']
+		profileFields: ['id', 'displayName', 'photos', 'email', 'address', 'last_name', 'first_name']
     }, function(accessToken, refreshToken, profile, done){
 			console.log(profile);
 		    User.findOne({facebookId: profile.id}).then((foundUser)=>{
@@ -57,7 +60,10 @@ passport.use(
 				else{
 					new User({
 						facebookId: profile.id,
-						username: profile.displayName
+						username: profile.displayName,
+						email: profile._json.email,
+						firstName: profile._json.first_name,
+						lastName: profile._json.last_name
 					}).save().then(function(newUser){
 						console.log("new user created successfully");
 						done(null, newUser);
