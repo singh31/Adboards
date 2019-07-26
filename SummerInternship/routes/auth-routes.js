@@ -35,6 +35,8 @@ router.post('/register/', function (req, res) {
                     var record = new User();
                     record.email = email;
                     record.password = record.hashPassword(password);
+					record.address = req.body.address;
+					record.fullName = req.body.name;
                     record.save(function (err, user) {
                         if (err) {
                             res.status(500).send('db error');

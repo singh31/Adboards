@@ -67,21 +67,21 @@
     
      <div class="signup-form" style="margin-top: 280px; font-family: Raleway;">
       <form class="" action="/auth/register/" method="post">
-         Name
-        <input type="text" placeholder="Full Name" class="txtb" style="max-width: 200%;" name="username">
+		Full Name
+        <input type="text" placeholder="Full Name" class="txtb" style="max-width: 200%;" name="name" required>
         <span>Email</span>
-        <input type="email" placeholder="Email" class="txtb" name="email">
+        <input type="email" placeholder="Email" class="txtb" name="email" required>
         <span>Password</span>
-        <input type="password" placeholder="Password" class="txtb" name="password">
+        <input type="password" placeholder="Password" class="txtb" name="password" required>
         <span>Confirm Password</span>
-        <input type="text" placeholder="Confirm Password" class="txtb">
+        <input type="text" placeholder="Confirm Password" class="txtb" required>
         <span>Address</span>
-        <textarea name="Address" cols="40" rows="5" placeholder="Address" style=" text-align: center; width: 660px; font-family: 'Rubik',sans-serif;"></textarea>
+        <textarea name="address" cols="40" rows="5" placeholder="Address" style=" text-align: center; width: 660px; font-family: 'Rubik',sans-serif;"></textarea>
        
        
        </div>
       <div style="margin-top: 600px;">
-       <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 430px;">
+       <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 430px;" required>
        <label class="form-check-label" for="exampleCheck1" style="font-family:Raleway; font-size: 15px;color:  #ABA7A7; margin-left: 450px;">I Agree to all Terms and Conditions</label>
         </div>
   

@@ -8,10 +8,10 @@ var userSchema = new mongoose.Schema({
     password: String,
 	googleId: String,
 	facebookId: String,
-	firstName: {type: String},
-	lastName: {type: String},
+	fullName: String,
 	email: {type: String, sparse: true},
 	phoneNo: {type: String},
+	address: String,
 	 isAprooved: {											 //Make it true if admin has aprooved dealer
 		 type: Boolean,
 	  	 default: false

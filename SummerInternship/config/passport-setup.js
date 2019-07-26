@@ -30,10 +30,8 @@ passport.use(
 				else{
 					new User({
 						googleId: profile.id,
-						username: profile.displayName,
+						fullName: profile.displayName,
 						email: profile._json.email,
-						firstName: profile._json.given_name,
-						lastName: profile._json.family_name
 					}).save().then(function(newUser){
 						console.log("new user created successfully");
 						done(null, newUser);
@@ -61,10 +59,8 @@ passport.use(
 				else{
 					new User({
 						facebookId: profile.id,
-						username: profile.displayName,
 						email: profile._json.email,
-						firstName: profile._json.first_name,
-						lastName: profile._json.last_name
+						fullName: profile.displayName,
 					}).save().then(function(newUser){
 						console.log("new user created successfully");
 						done(null, newUser);
