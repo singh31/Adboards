@@ -1,7 +1,9 @@
 var mongoose = require("mongoose");
+var bcrypt = require('bcrypt-nodejs');
 //var passportLocalMongoose = require("passport-local-mongoose");
 
 var userSchema = new mongoose.Schema({
+	isAdmin: false,
     username: String,
     password: String,
 	googleId: String,
@@ -28,6 +30,14 @@ var userSchema = new mongoose.Schema({
 		}
 	}]
 });
+
+userSchema.methods.hashPassword = function (password) {
+    return bcrypt.hashSync(password,bcrypt.genSaltSync(10));
+};
+
+userSchema.methods.comparePassword = function (password,hash) {
+    return bcrypt.compareSync(password,hash);
+};
 
 //userSchema.plugin(passportLocalMongoose);
 

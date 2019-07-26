@@ -58,16 +58,14 @@
  
   	
   <div class="signup-form" style="margin-top: 80px;"> 
-      <form class="" action="index.html" method="post">
+      <form class="" action="/auth/login/" method="post">
       	<div><p style="font-family: Raleway; font-size: 20px;"><b>LOGIN NOW</b></p></div>
         <div style="float: left; font-family: Raleway;"><p>USERNAME</p></div>
        
        
-        <input type="email" placeholder="Email" class="txtb">
+        <input type="email" placeholder="Email" class="txtb" name="username">
          <div style="float: left; font-family: Raleway;"><p>PASSWORD</p></div>
-        <input type="password" placeholder="Password" class="txtb">
-        
-      </form>
+        <input type="password" placeholder="Password" class="password" name="password">
   </div>
 
     <div style="margin-left: 430px; margin-top:230px;float: left; ">
@@ -75,14 +73,16 @@
 <table border="0"; style="border-color: white;" style="margin-left: 40px;">  
   <tr>
     <td class="btn1" style="width: 666px; height: 20px; "> <a href="#" id="log" style="text-decoration: none;">
-        <p style="text-align: center;">LOGIN</p>
+        <p style="text-align: center;"><button type="submit">
+			
+			LOGIN</button></p>
       </a>
       
     </td>
   </tr>
  </table>
 </div>
-
+</form>
    
     
   

@@ -1,6 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20');
 const FacebookStrategy = require('passport-facebook');
+const localStrategy = require('passport-local');
 const User = require('../models/user.js');
 
 passport.serializeUser((user, done) => {
@@ -74,3 +75,29 @@ passport.use(
        }
 	)
 );
+
+passport.use(new localStrategy(function (email, password, done) {
+	console.log(email);
+        User.findOne({
+            email: email
+        }, function (err, foundUser) {
+            if (err) {
+                done(err);
+            } else {
+                if (foundUser) {
+                    var valid = foundUser.comparePassword(password, foundUser.password);
+                    if (valid) {
+                        // do not add password hash to session
+                        done(null, {
+                            email: foundUser.email,
+                            id: foundUser._id
+                        });
+                    } else {
+                        done(null, false);
+                    }
+                } else {
+                    done(null, false);
+                }
+            }
+        });
+}));
