@@ -23,7 +23,7 @@ router.post("/search", function(req, res){
             console.log(err);
         else{
             console.log(foundProperties);
-            res.render("listproperties.ejs", {properties: foundProperties});
+            res.render("search.ejs", {properties: foundProperties});
         }
     });
 });
