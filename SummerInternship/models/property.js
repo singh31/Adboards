@@ -11,6 +11,7 @@ var propertySchema = mongoose.Schema({
  	price: {type: Number, required: true, min: 0, max: 100000000}, //In dolllars
  	area: {type: Number, required: true, min: 1, max: 100000000}, //In Sq Feet
 	photos: [Buffer],
+	bedrooms: {type: Number, required: true, min: 0, max: 100},
 	seller: {
 	  id: {
 	   type: mongoose.Schema.Types.ObjectId,

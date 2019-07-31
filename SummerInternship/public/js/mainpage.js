@@ -18,5 +18,5 @@ $(document).ready(function(event) {
     scroll_top.click(function() {
         $('html, body').animate({scrollTop: 0}, 300);
     });
-    $('#login')
+    $('#login');
 });

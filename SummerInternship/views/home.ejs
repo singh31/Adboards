@@ -16,13 +16,16 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
-  <a class="navbar-brand" href="mainpage.html">BRAND NAME</a>
+  <a class="navbar-brand" href="/">BRAND NAME</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto" style="font-family: 'Rubik', sans-serif;">
+	  <li class="nav-item">
+        <a class="nav-link" href="/listproperties/">LIST</b></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/properties/">PROPERTIES</b></a>
       </li>
@@ -61,7 +64,7 @@
     
   
 
-<form style="margin-left: 100px;">
+<form style="margin-left: 100px;" action='/search' method='post'>
 <fieldset>
 <legend style="font-family: Raleway; font-size:60px; margin-left: 280px;"><b>ONE STOP FOR <span style="color: #FF6969;">D</span>REAM HOME</b></legend>
 <legend style="font-family: Raleway; font-size:15px; margin-left: 520px; color: #ABA7A7;" >Property for Sale & for Rent around the World</legend>
@@ -70,12 +73,12 @@
 <div class="clearfix" style="margin-left: 400px;">
 <div class="signup-form" style="margin-left: 80px;">
 
-<input type="text" placeholder="Locations"  class="txtb" id="label1" name="label1" tabindex="10" autocomplete="off">
+<input type="text" placeholder="Locations"  class="txtb" id="label1" name="location" tabindex="10" autocomplete="off">
 </div>
 
 <div class="signup-form" >
 
-<input type="text" placeholder="Bedrooms" class="txtb" id="label2" name="label2" tabindex="20" autocomplete="off">
+<input type="text" placeholder="Bedrooms" class="txtb" id="label2" name="bedrooms" tabindex="20" autocomplete="off">
 </div>
 <br>
 </div>
@@ -83,29 +86,32 @@
 
 <div class="signup-form" style="margin-left: 80px;">
 
-<input type="text" placeholder="Price" class="txtb" id="label3" name="label3" tabindex="30" autocomplete="off">
+<input type="text" placeholder="Price" class="txtb" id="label3" name="price" tabindex="30" autocomplete="off">
 </div>
 
 <div class="signup-form">
 
-<input type="text" placeholder="Flat or Mansion" class="txtb" id="label4" name="label4" tabindex="40" autocomplete="off">
+<input type="text" placeholder="Flat or Mansion" class="txtb" id="label4" name="flatOrMansion" tabindex="40" autocomplete="off">
 </div>
 </div>
-
-</fieldset>
-</form>
- <div style="margin-left: 690px; margin-top:30px;float: left; ">
+<div style="margin-left: 690px; margin-top:30px;float: left; ">
 
 <table border="0"; style="border-color: white;" style="margin-left: 40px;">  
   <tr>
     <td class="btn1" style="width: 166px; height: 20px; "> <a href="#" id="log" style="text-decoration: none;">
-        <p style="text-align: center;">FIND HERE</p>
+		<button>
+			<p style="text-align: center;">FIND HERE</p>
+		</button>
+        
       </a>
       
     </td>
   </tr>
  </table>
 </div>
+</fieldset>
+</form>
+ 
 
 
   
